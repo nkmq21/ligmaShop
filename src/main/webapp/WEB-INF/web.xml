@@ -7,6 +7,16 @@
         <servlet-name>Test</servlet-name>
         <servlet-class>controller.Test</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GoogleServlet</servlet-name>
+        <servlet-class>controller.GoogleServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>AuthServlet</servlet-name>
+        <servlet-class>controller.AuthServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>Test</servlet-name>
         <url-pattern>/Test</url-pattern>
@@ -19,10 +29,7 @@
         <servlet-name>AuthServlet</servlet-name>
         <url-pattern>/authservlet</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SearchServlet</servlet-name>
-        <url-pattern>/search</url-pattern>
-    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>/resource/*</url-pattern>
