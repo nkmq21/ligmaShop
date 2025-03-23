@@ -4,8 +4,8 @@
    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
    version="6.0">
     <servlet>
-        <servlet-name>Test</servlet-name>
-        <servlet-class>controller.Test</servlet-class>
+        <servlet-name>mainTest</servlet-name>
+        <servlet-class>controller.mainTest</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>GoogleServlet</servlet-name>
@@ -18,8 +18,8 @@
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>Test</servlet-name>
-        <url-pattern>/Test</url-pattern>
+        <servlet-name>mainTest</servlet-name>
+        <url-pattern>/test</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>GoogleServlet</servlet-name>
