@@ -12,7 +12,7 @@
         <url-pattern>/Test</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
+        <servlet-name>GoogleServlet</servlet-name>
         <url-pattern>/logingg</url-pattern>
     </servlet-mapping>
     <servlet-mapping>

@@ -13,7 +13,7 @@ import model.Users;
 
 import userDAO.UserDAO;
 
-@WebServlet(name = "LoginServlet", urlPatterns = {"/logingg"})
+@WebServlet(name = "GoogleServlet", urlPatterns = {"/logingg"})
 public class GoogleServlet extends HttpServlet {
     private UserDAO userDAO = new UserDAO();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)

@@ -19,25 +19,24 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlTransient;
+
 import java.io.Serializable;
 import java.util.Collection;
 
 /**
- *
  * @author Asus-FPT
  */
 @Entity
 @Table(name = "COLORS")
 @XmlRootElement
 @NamedQueries(
-{
-    @NamedQuery(name = "Colors.findAll", query = "SELECT c FROM Colors c"),
-    @NamedQuery(name = "Colors.findByColorID", query = "SELECT c FROM Colors c WHERE c.colorID = :colorID"),
-    @NamedQuery(name = "Colors.findByColorName", query = "SELECT c FROM Colors c WHERE c.colorName = :colorName"),
-    @NamedQuery(name = "Colors.findByDescription", query = "SELECT c FROM Colors c WHERE c.description = :description")
-})
-public class Colors implements Serializable
-{
+        {
+                @NamedQuery(name = "Colors.findAll", query = "SELECT c FROM Colors c"),
+                @NamedQuery(name = "Colors.findByColorID", query = "SELECT c FROM Colors c WHERE c.colorID = :colorID"),
+                @NamedQuery(name = "Colors.findByColorName", query = "SELECT c FROM Colors c WHERE c.colorName = :colorName"),
+                @NamedQuery(name = "Colors.findByDescription", query = "SELECT c FROM Colors c WHERE c.description = :description")
+        })
+public class Colors implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -56,90 +55,74 @@ public class Colors implements Serializable
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "colorID")
     private Collection<Productsizecolor> productsizecolorCollection;
 
-    public Colors()
-    {
+    public Colors() {
     }
 
-    public Colors(Integer colorID)
-    {
+    public Colors(Integer colorID) {
         this.colorID = colorID;
     }
 
-    public Colors(Integer colorID, String colorName)
-    {
+    public Colors(Integer colorID, String colorName) {
         this.colorID = colorID;
         this.colorName = colorName;
     }
 
-    public Integer getColorID()
-    {
+    public Integer getColorID() {
         return colorID;
     }
 
-    public void setColorID(Integer colorID)
-    {
+    public void setColorID(Integer colorID) {
         this.colorID = colorID;
     }
 
-    public String getColorName()
-    {
+    public String getColorName() {
         return colorName;
     }
 
-    public void setColorName(String colorName)
-    {
+    public void setColorName(String colorName) {
         this.colorName = colorName;
     }
 
-    public String getDescription()
-    {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description)
-    {
+    public void setDescription(String description) {
         this.description = description;
     }
 
     @XmlTransient
-    public Collection<Productsizecolor> getProductsizecolorCollection()
-    {
+    public Collection<Productsizecolor> getProductsizecolorCollection() {
         return productsizecolorCollection;
     }
 
-    public void setProductsizecolorCollection(Collection<Productsizecolor> productsizecolorCollection)
-    {
+    public void setProductsizecolorCollection(Collection<Productsizecolor> productsizecolorCollection) {
         this.productsizecolorCollection = productsizecolorCollection;
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int hash = 0;
         hash += (colorID != null ? colorID.hashCode() : 0);
         return hash;
     }
 
     @Override
-    public boolean equals(Object object)
-    {
+    public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Colors))
-        {
+        if (!(object instanceof Colors)) {
             return false;
         }
         Colors other = (Colors) object;
-        if ((this.colorID == null && other.colorID != null) || (this.colorID != null && !this.colorID.equals(other.colorID)))
-        {
+        if ((this.colorID == null && other.colorID != null) || (this.colorID != null && !this.colorID.equals(other.colorID))) {
             return false;
         }
         return true;
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "model.resources.Colors[ colorID=" + colorID + " ]";
     }
-    
+
 }
